@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.7.4
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Creato il: Nov 03, 2017 alle 18:06
+- Versione del server: 10.1.26-MariaDB
+- Versione PHP: 7.1.9
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="prenotazione" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="course">
+                CREATE TABLE `course` (
+                  `Id` int(11) NOT NULL AUTO_INCREMENT,
+                  `Credits` int(11) NOT NULL,
+                  `Name` longtext,
+                  `faculty` longtext,
+                  PRIMARY KEY (`Id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="reservation">
+                CREATE TABLE `reservation` (
+                  `Id` int(11) NOT NULL AUTO_INCREMENT,
+                  `DateOfReservation` datetime(6) NOT NULL,
+                  `IdCouse` int(11) NOT NULL,
+                  `IdStudent` int(11) NOT NULL,
+                  PRIMARY KEY (`Id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="student">
+                CREATE TABLE `student` (
+                  `Id` int(11) NOT NULL AUTO_INCREMENT,
+                  `DateOfBirth` datetime(6) NOT NULL,
+                  `Name` longtext,
+                  `faculty` longtext,
+                  PRIMARY KEY (`Id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'prenotazione'
+    -->
+    <database name="prenotazione">
+        <!-- Tabella course -->
+        <table name="course">
+            <column name="Id">1</column>
+            <column name="Credits">9</column>
+            <column name="Name">analisi 1</column>
+            <column name="faculty">ingegneria</column>
+        </table>
+        <table name="course">
+            <column name="Id">2</column>
+            <column name="Credits">9</column>
+            <column name="Name">controlli automatici</column>
+            <column name="faculty">ingegneria</column>
+        </table>
+        <table name="course">
+            <column name="Id">3</column>
+            <column name="Credits">9</column>
+            <column name="Name">chimica</column>
+            <column name="faculty">ingegneria</column>
+        </table>
+        <table name="course">
+            <column name="Id">4</column>
+            <column name="Credits">6</column>
+            <column name="Name">botanica</column>
+            <column name="faculty">scienza</column>
+        </table>
+        <table name="course">
+            <column name="Id">5</column>
+            <column name="Credits">6</column>
+            <column name="Name">elettrotecnica</column>
+            <column name="faculty">ingegneria</column>
+        </table>
+        <!-- Tabella reservation -->
+        <table name="reservation">
+            <column name="Id">1</column>
+            <column name="DateOfReservation">2017-10-11 00:00:00.000000</column>
+            <column name="IdCouse">3</column>
+            <column name="IdStudent">1</column>
+        </table>
+        <table name="reservation">
+            <column name="Id">3</column>
+            <column name="DateOfReservation">2017-10-13 00:00:00.000000</column>
+            <column name="IdCouse">5</column>
+            <column name="IdStudent">3</column>
+        </table>
+        <table name="reservation">
+            <column name="Id">4</column>
+            <column name="DateOfReservation">0001-01-01 00:00:00.000000</column>
+            <column name="IdCouse">1</column>
+            <column name="IdStudent">1</column>
+        </table>
+        <table name="reservation">
+            <column name="Id">5</column>
+            <column name="DateOfReservation">0001-01-01 00:00:00.000000</column>
+            <column name="IdCouse">4</column>
+            <column name="IdStudent">2</column>
+        </table>
+        <table name="reservation">
+            <column name="Id">6</column>
+            <column name="DateOfReservation">0001-01-01 00:00:00.000000</column>
+            <column name="IdCouse">2</column>
+            <column name="IdStudent">4</column>
+        </table>
+        <table name="reservation">
+            <column name="Id">7</column>
+            <column name="DateOfReservation">0001-01-01 00:00:00.000000</column>
+            <column name="IdCouse">5</column>
+            <column name="IdStudent">4</column>
+        </table>
+        <!-- Tabella student -->
+        <table name="student">
+            <column name="Id">1</column>
+            <column name="DateOfBirth">2017-10-13 00:00:00.000000</column>
+            <column name="Name">fabio lella</column>
+            <column name="faculty">ingegneria</column>
+        </table>
+        <table name="student">
+            <column name="Id">2</column>
+            <column name="DateOfBirth">2017-10-07 00:00:00.000000</column>
+            <column name="Name">maria grazia di si</column>
+            <column name="faculty">scienza</column>
+        </table>
+        <table name="student">
+            <column name="Id">3</column>
+            <column name="DateOfBirth">2017-10-13 00:00:00.000000</column>
+            <column name="Name">simone bonarrigo</column>
+            <column name="faculty">ingegneria</column>
+        </table>
+        <table name="student">
+            <column name="Id">4</column>
+            <column name="DateOfBirth">0001-01-01 00:00:00.000000</column>
+            <column name="Name">Francesco Privitera</column>
+            <column name="faculty">ingegneria</column>
+        </table>
+    </database>
+</pma_xml_export>

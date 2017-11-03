@@ -1,0 +1,39 @@
+﻿<h1>Lista Corsi</h1>
+<p *ngIf="!courses"><em>Loading...</em></p>
+<table class='table' *ngIf="courses">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Facoltà</th>
+            <th>Crediti</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of courses">
+            <td>{{ course.id }}</td>
+            <td>{{ course.name }}</td>
+            <td>{{ course.faculty }}</td>
+            <td>{{ course.credits }}</td>
+        </tr>
+    </tbody>
+</table>
+<tr>
+<td><h1>Inserisci corso</h1></td>
+ </tr>
+<tr>
+    <label> Name: <input type="text" class="form-control" id="new_name"></label>
+    <label>Facolta: <input type="text" class="form-control" id="new_facolta"></label>
+    <label>Crediti: <input type="text" class="form-control" id="new_credit"></label>
+
+
+    <button type="button" class="btn btn-default" (click)="EditCourse()" id="refresh">Save</button>
+</tr>
+<td><h1>Elimina corso</h1></td>
+
+<tr>
+    <label>Id: <input type="text" class="form-control" id="id"></label>
+    <button type="button" class="btn btn-default" (click)="DeleteCourse()">Elimina</button>
+</tr>
+

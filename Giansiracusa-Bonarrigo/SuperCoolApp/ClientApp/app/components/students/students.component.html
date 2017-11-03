@@ -1,0 +1,35 @@
+<h1>Students List</h1>
+<p *ngIf="!students"><em>Loading...</em></p>
+<ul *ngFor="let student of students">
+            <li [routerLinkActive]="['link-active']">
+                <a [routerLink]="['/materie',student.id,student.faculty]">
+                    <li>
+                        <h3>
+                            {{ student.name }} -Id:{{student.id}}
+      
+                        </h3>
+                    </li>
+                </a>
+            </li>
+
+        </ul>
+  
+<tr>
+    <td><h1>Inserisci Studente</h1></td>
+</tr>
+<tr>
+    <label> Name: <input type="text" class="form-control" id="new_name"></label>
+    <label>Facolta: <input type="text" class="form-control" id="new_facolta"></label>
+    <label>DateOfBirth: <input type="text" class="form-control" id="new_date"></label>
+
+
+    <button type="button" class="btn btn-default" (click)="EditStudent()" id="refresh">Save</button>
+</tr>
+<td><h1>Elimina Studente</h1></td>
+
+<tr>
+    <label>Id: <input type="text" class="form-control" id="id"></label>
+    <button type="button" class="btn btn-default" (click)="DeleteStudent()">Elimina</button>
+</tr>
+
+

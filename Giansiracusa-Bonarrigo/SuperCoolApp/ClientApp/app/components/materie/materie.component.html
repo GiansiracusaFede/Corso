@@ -1,0 +1,26 @@
+﻿<h1>Lista Materie Prenotabili</h1>
+<p *ngIf="!courses"><em>Loading...</em></p>
+<ul *ngFor="let course of courses">
+    <li [routerLinkActive]="['link-active']">
+        <a [routerLink]="['/prenotazione',course.id,id]">
+            <h4>{{ course.name }}</h4>
+        </a>
+    </li>
+
+</ul><h2>Lista Materie Prenotate</h2>
+        <p *ngIf="!coursesPrenotati"><em>Loading...</em></p>
+    <table class='table' *ngIf="coursesPrenotati">
+        <thead>
+            <tr>
+                <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let course of coursesPrenotati">
+
+                <td>
+                   {{ course.name }}
+                </td>
+            </tr>
+    </table>
+
